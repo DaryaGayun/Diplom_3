@@ -2,7 +2,7 @@ import pytest
 import requests
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
-from helpers import Generators,User
+from helpers import Generators, User
 import allure
 import copy
 from urls import Endpoints
@@ -26,7 +26,7 @@ def random_user():
     password = payload["password"]
     with allure.step("Создание пользователя через API"):
         response = User.register_user(payload)
-        access_token = response.json().get("access_token")
+        access_token = response.json().get("accessToken")
     yield email, password
     with allure.step("Удаление пользователя через API"):
         login_payload = copy.deepcopy(payload)

@@ -49,11 +49,14 @@ class BasePage:
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
         self.driver.execute_script("arguments[0].click();", element)
 
+    @allure.step('Сфокусироваться на элементе: скролл и ожидание кликабельности: {element}')
     def find_and_focus_by_script(self, element):
         self.wait.until(expected_conditions.presence_of_element_located(element))
-        self.driver.execute_script("arguments[0].scrollIntoView();", self.driver.find_element(*element))
+        target = self.driver.find_element(*element)
+        self.driver.execute_script("arguments[0].scrollIntoView();", target)
         self.wait.until(expected_conditions.element_to_be_clickable(element))
 
+    @allure.step('Получить элемент с предварительной фокусировкой: {element}')
     def get_element(self, element: tuple):
         self.find_and_focus_by_script(element=element)
         return self.driver.find_element(*element)

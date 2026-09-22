@@ -7,9 +7,7 @@ from urls import  Endpoints
 class TestTools:
     @staticmethod
     def check_ui_test_result(expected_value, actual_value):
-        assert expected_value == actual_value, (
-            f'\nОжидаемое значение:\n"{expected_value}"\nФактическое значение:\n"{actual_value}"'
-        )
+        assert expected_value == actual_value, (f'\nОжидаемое значение:\n"{expected_value}"\nФактическое значение:\n"{actual_value}"')
 
 class Generators:
     @staticmethod

@@ -52,12 +52,10 @@ class ConstructorPage(BasePage):
 
     @allure.step('Перетащить булку "Флюоресцентная булка R2-D3" в корзину и проверить её отображение в корзине')
     def drag_and_drop_and_verify_r2_d3(self):
-        self.drag_and_drop_element(ConstructorPageLocators.INGREDIENT_R2_D3_BUN_LOCATOR,
-                                   ConstructorPageLocators.BASKET_OF_BURGER_CONSTRUCTOR)
+        self.drag_and_drop_element(ConstructorPageLocators.INGREDIENT_R2_D3_BUN_LOCATOR, ConstructorPageLocators.BASKET_OF_BURGER_CONSTRUCTOR)
         return self.get_text_from_element(ConstructorPageLocators.INGREDIENT_R2_D3_BUN_IN_BASKET_CONSTRUCTOR)
 
-    @allure.step('Кликнуть кнопку "Оформить заказ" на странице "Конструктор" и '
-                 'дождаться видимости номера заказа в открывшемся окне')
+    @allure.step('Кликнуть кнопку "Оформить заказ" на странице "Конструктор" и дождаться видимости номера заказа в открывшемся окне')
     def click_create_order_button(self):
         self.click_to_element_by_script(ConstructorPageLocators.BUTTON_PLACE_AN_ORDER)
         self.wait_for_real_order_number(ConstructorPageLocators.NUMBER_OF_ORDER_MODAL_WINDOW)

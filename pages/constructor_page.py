@@ -47,7 +47,8 @@ class ConstructorPage(BasePage):
 
     @allure.step('Получить значение счётчика ингредиента')
     def get_ingredient_counter_value(self):
-        return self.get_text_from_element(ConstructorPageLocators.INGREDIENT_COUNTER_R2_D3_BUN)
+        counter = self.get_text_from_element(ConstructorPageLocators.INGREDIENT_COUNTER_R2_D3_BUN)
+        return int(counter)
 
     @allure.step('Перетащить булку "Флюоресцентная булка R2-D3" в корзину и проверить её отображение в корзине')
     def drag_and_drop_and_verify_r2_d3(self):

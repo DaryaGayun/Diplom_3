@@ -1,4 +1,4 @@
-# Задание 2: Автотесты для UI
+# Задание 3: Автотесты для UI
 
 Автотесты для проверки UI сервиса Stellar Burgers.
 
@@ -29,4 +29,14 @@ pip install -r requirements.txt
 ## Запуск тестов
 ```
 pytest tests/ -v
+```
+
+## Запустить тесты с генерацией Allure-отчёта
+```
+pytest tests/ -v --alluredir=allure-results
+```
+
+## Сгенерировать HTML-отчёт
+```
+allure serve allure-results
 ```

@@ -5,4 +5,3 @@ class BasePageLocators:
     BUTTON_TO_CONSTRUCTOR = By.XPATH, "//p[contains(text(), 'Конструктор')]"    
     BUTTON_TO_ORDER_FEED = By.XPATH, "//p[contains(text(), 'Лента Заказов')]"   
     BUTTON_TO_PERSONAL_ACCOUNT = By.XPATH, "//a[@href='/account']"              
-    BUTTON_LOGIN_IN_MAIN = (By.XPATH, './/button[text() = "Войти в аккаунт"]')  

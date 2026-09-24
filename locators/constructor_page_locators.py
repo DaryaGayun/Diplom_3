@@ -12,7 +12,6 @@ class ConstructorPageLocators:
     INGREDIENT_COUNTER_R2_D3_BUN = By.XPATH, './/*[@class="counter_counter__num__3nue1"]' 
     PROPERTIES_OPEN_MODAL_WINDOW = By.CSS_SELECTOR, "section.Modal_modal_opened__3ISw4"
     MODAL_WINDOW_CLOSED_CONSTRUCTOR = By.CSS_SELECTOR, "section.Modal_modal__P3_V5"
-    INGREDIENT_DETAILS_MODAL_WINDOW = (By.XPATH, "//h2[contains(@class, 'Modal_modal__title') and text()='Детали ингредиента']")
     BUTTON_CLOSE_MODAL_WINDOW = By.XPATH, ".//button[@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']"
     INGREDIENT_R2_D3_BUN_NAME_MODAL_WINDOW = By.XPATH, "//p[@class='text text_type_main-medium mb-8']"
     TEXT_INDICATOR_ORDER_OF_ORDER_MODAL_WINDOW = By.XPATH, "//p[contains(text(), 'идентификатор заказа')]"

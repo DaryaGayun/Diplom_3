@@ -69,4 +69,8 @@ class TestOrderFeed:
         order_feed_page = OrderFeedPage(driver)
         order_feed_page.refresh_feed_of_orders_page_and_wait()
         with allure.step(f'Проверить, что номер заказа {order_identifier} отображается в секции «В работе»'):
-            order_feed_page.check_order_number_in_progress_section_inside_order_feed(order_identifier=order_identifier)
+            assert order_feed_page.get_order_number_in_progress_section() == order_identifier, (
+                f"Номер заказа в секции «В работе» не совпадает: "
+                f"ожидали '{order_identifier}', "
+                f"получили '{order_feed_page.get_order_number_in_progress_section()}'"
+            )

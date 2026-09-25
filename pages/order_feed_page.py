@@ -21,6 +21,6 @@ class OrderFeedPage(BasePage):
     def refresh_feed_of_orders_page_and_wait(self):
         self.refresh_page_and_wait(OrderFeedPageLocators.HEADER_FEED_OF_ORDERS)
 
-    @allure.step("Проверяем наличие номера сделанного заказа в разделе 'В работе' в 'Ленте заказов'")
-    def check_order_number_in_progress_section_inside_order_feed(self, order_identifier):
-        TestTools.check_ui_test_result(expected_value=order_identifier, actual_value=self.get_element(OrderFeedPageLocators.ORDERS_IN_WORK).text.lstrip('0'))
+    @allure.step("Получить номер заказа из раздела 'В работе' в 'Ленте заказов'")
+    def get_order_number_in_progress_section(self) -> str:
+        return self.get_element(OrderFeedPageLocators.ORDERS_IN_WORK).text.lstrip('0')
